@@ -1,0 +1,71 @@
+/* Reset global de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f3f4f6;
+    color: #333333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho Moderno com Degradê */
+.site-header {
+    background: linear-gradient(135deg, #6c5ce7, #4b0082);
+    color: #ffffff;
+    padding: 45px 0;
+    text-align: center;
+    border-bottom: 5px solid #a29bfe;
+}
+
+.site-header h1 {
+    font-size: 2.6rem;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.site-header p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Seção Principal e Layout do Card */
+.site-main {
+    margin-top: 35px;
+    margin-bottom: 40px;
+}
+
+.pet-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h2 {
+    color: #4b0082;
+    margin-bottom: 10px;
+}
