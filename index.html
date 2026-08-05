@@ -24,9 +24,34 @@
             <div class="card-content">
                 <h2>Saúde e Bem-estar</h2>
                 <p>Mantenha a vacinação em dia e faça passeios regulares para garantir a alegria do seu amigo!</p>
+                
+                <button class="like-btn" id="likeBtn" onclick="toggleLike()">
+                    <i class="fa-regular fa-heart" id="likeIcon"></i>
+                    <span id="likeText">Curtir</span>
+                </button>
             </div>
         </article>
     </main>
+
+    <script>
+        function toggleLike() {
+            const btn = document.getElementById('likeBtn');
+            const icon = document.getElementById('likeIcon');
+            const text = document.getElementById('likeText');
+
+            btn.classList.toggle('liked');
+
+            if (btn.classList.contains('liked')) {
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid');
+                text.textContent = 'Curtido';
+            } else {
+                icon.classList.remove('fa-solid');
+                icon.classList.add('fa-regular');
+                text.textContent = 'Curtir';
+            }
+        }
+    </script>
 
 </body>
 </html>
