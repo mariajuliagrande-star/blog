@@ -6,6 +6,35 @@
     <title>Cuidados com Pets</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Estilos organizados para os botões de curtida */
+        .like-btn {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            margin-right: 8px;
+            margin-top: 10px;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .like-btn:hover {
+            background-color: #e2e2e2;
+        }
+
+        /* Estado quando o botão estiver ativado (Curtido) */
+        .like-btn.liked {
+            background-color: #ffe6e6;
+            border-color: #ff4d4d;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
@@ -17,38 +46,44 @@
     </header>
 
     <main class="site-main container">
-        <article class="pet-card">
-            <div class="image-container">
-                <img src="Gemini_Generated_Image_m8syjtm8syjtm8sy.png" alt="Cachorro feliz correndo ao ar livre">
-            </div>
-            <div class="card-content">
-                <h2>Saúde e Bem-estar</h2>
-                <p>Mantenha a vacinação em dia e faça passeios regulares para garantir a alegria do seu amigo!</p>
+        
+        <article class="post-card">
+            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
+            <div>
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
                 
-                <button class="like-btn" id="likeBtn" onclick="toggleLike()">
-                    <i class="fa-regular fa-heart" id="likeIcon"></i>
-                    <span id="likeText">Curtir</span>
-                </button>
+                <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
+                <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
             </div>
         </article>
+
+        <article class="post-card">
+            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
+            <div>
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                
+                <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
+                <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
+            </div>
+        </article>
+
     </main>
 
     <script>
-        function toggleLike() {
-            const btn = document.getElementById('likeBtn');
-            const icon = document.getElementById('likeIcon');
-            const text = document.getElementById('likeText');
+        function toggleLike(btn) {
+            const countSpan = btn.querySelector('span');
+            let count = parseInt(countSpan.textContent);
 
             btn.classList.toggle('liked');
 
             if (btn.classList.contains('liked')) {
-                icon.classList.remove('fa-regular');
-                icon.classList.add('fa-solid');
-                text.textContent = 'Curtido';
+                countSpan.textContent = count + 1;
             } else {
-                icon.classList.remove('fa-solid');
-                icon.classList.add('fa-regular');
-                text.textContent = 'Curtir';
+                countSpan.textContent = Math.max(0, count - 1);
             }
         }
     </script>
