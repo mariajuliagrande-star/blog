@@ -8,30 +8,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Estilos organizados para os botões de curtida */
+        /* Estilos dos Botões */
         .like-btn {
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
+            background-color: #f8f9fa;
+            border: 1px solid #dcdcdc;
             border-radius: 20px;
-            padding: 6px 14px;
+            padding: 8px 16px;
             font-size: 0.95rem;
             cursor: pointer;
             margin-right: 8px;
             margin-top: 10px;
-            transition: all 0.2s ease;
+            transition: all 0.2s ease-in-out;
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            user-select: none;
         }
 
         .like-btn:hover {
-            background-color: #e2e2e2;
+            background-color: #e9ecef;
         }
 
-        /* Estado quando o botão estiver ativado (Curtido) */
+        /* Estado ativo do botão (Quando estiver curtido) */
         .like-btn.liked {
             background-color: #ffe6e6;
             border-color: #ff4d4d;
+            color: #d90429;
             font-weight: bold;
         }
     </style>
@@ -76,14 +78,16 @@
     <script>
         function toggleLike(btn) {
             const countSpan = btn.querySelector('span');
-            let count = parseInt(countSpan.textContent);
+            let currentCount = parseInt(countSpan.textContent, 10);
 
+            // Alterna a classe 'liked'
             btn.classList.toggle('liked');
 
+            // Se agora possui a classe 'liked', incrementa +1, senão subtrai -1
             if (btn.classList.contains('liked')) {
-                countSpan.textContent = count + 1;
+                countSpan.textContent = currentCount + 1;
             } else {
-                countSpan.textContent = Math.max(0, count - 1);
+                countSpan.textContent = Math.max(0, currentCount - 1);
             }
         }
     </script>
