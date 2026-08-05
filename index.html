@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Estilos dos Botões */
+        /* Estilos dos Botões de Reação */
         .like-btn {
             background-color: #f8f9fa;
             border: 1px solid #dcdcdc;
@@ -29,7 +29,7 @@
             background-color: #e9ecef;
         }
 
-        /* Estado ativo do botão (Quando estiver curtido) */
+        /* Estado ativo do botão (Curtido) */
         .like-btn.liked {
             background-color: #ffe6e6;
             border-color: #ff4d4d;
@@ -49,6 +49,21 @@
 
     <main class="site-main container">
         
+        <article class="pet-card">
+            <div class="image-container">
+                <img src="Gemini_Generated_Image_m8syjtm8syjtm8sy.png" alt="Cachorro feliz correndo ao ar livre">
+            </div>
+            <div class="card-content">
+                <h2>Saúde e Bem-estar</h2>
+                <p>Mantenha a vacinação em dia e faça passeios regulares para garantir a alegria do seu amigo!</p>
+                
+                <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
+                <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #ccc;">
+
         <article class="post-card">
             <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
             <div>
@@ -80,10 +95,8 @@
             const countSpan = btn.querySelector('span');
             let currentCount = parseInt(countSpan.textContent, 10);
 
-            // Alterna a classe 'liked'
             btn.classList.toggle('liked');
 
-            // Se agora possui a classe 'liked', incrementa +1, senão subtrai -1
             if (btn.classList.contains('liked')) {
                 countSpan.textContent = currentCount + 1;
             } else {
