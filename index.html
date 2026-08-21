@@ -8,10 +8,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* Variáveis de Cores (Modo Claro Padrão) */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --card-bg: #f9f9f9;
+            --border-color: #dcdcdc;
+            --btn-bg: #f8f9fa;
+        }
+
+        /* Variáveis de Cores (Modo Escuro) */
+        body.dark-mode {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --btn-bg: #2d2d2d;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Botão Flutuante do Modo Escuro */
+        .theme-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--btn-bg);
+            color: var(--text-color);
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            padding: 10px 18px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        /* Estilização dos Cards para o Tema */
+        .pet-card, .post-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
         /* Estilos dos Botões de Curtida */
         .like-btn {
-            background-color: #f8f9fa;
-            border: 1px solid #dcdcdc;
+            background-color: var(--btn-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 8px 16px;
             font-size: 0.95rem;
@@ -26,7 +82,7 @@
         }
 
         .like-btn:hover {
-            background-color: #e9ecef;
+            opacity: 0.8;
         }
 
         /* Estado ativo do botão (Curtido) */
@@ -36,9 +92,20 @@
             color: #d90429;
             font-weight: bold;
         }
+
+        body.dark-mode .like-btn.liked {
+            background-color: #4a151b;
+            color: #ff6b6b;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Botão para Alternar Modo Escuro / Claro -->
+    <button class="theme-toggle-btn" onclick="toggleTheme()">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+        <span id="themeText">Modo Escuro</span>
+    </button>
 
     <header class="site-header">
         <div class="container">
@@ -91,8 +158,28 @@
 
     </main>
 
-    <!-- Script JavaScript para curtir e descurtir -->
+    <!-- Scripts de Funcionalidades -->
     <script>
+        // Lógica do Modo Escuro / Claro
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                themeText.textContent = 'Modo Claro';
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                themeText.textContent = 'Modo Escuro';
+            }
+        }
+
+        // Lógica de Curtir / Descurtir
         function toggleLike(btn) {
             const countSpan = btn.querySelector('span');
             let currentCount = parseInt(countSpan.textContent, 10);
