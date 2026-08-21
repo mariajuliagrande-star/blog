@@ -53,6 +53,14 @@
             z-index: 1000;
         }
 
+        /* Títulos de Categorias */
+        .section-title {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
         /* Estilização dos Cards */
         .pet-card, .post-card {
             background-color: var(--card-bg);
@@ -116,13 +124,13 @@
 
     <main class="site-main container">
         
-        <!-- Post 1: Saude e Bem-Estar -->
+        <!-- Post de Saúde e Bem-estar -->
         <article class="pet-card">
             <div class="image-container">
                 <img src="Gemini_Generated_Image_m8syjtm8syjtm8sy.png" alt="Cachorro feliz correndo ao ar livre">
             </div>
             <div class="card-content">
-                <h2>Saúde e Bem-estar no Campo</h2>
+                <h2>Saúde e Bem-estar</h2>
                 <p>Mantenha a vacinação em dia e faça passeios regulares para garantir a alegria do seu amigo!</p>
                 
                 <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
@@ -130,52 +138,118 @@
             </div>
         </article>
 
-        <!-- Post 2: Apresentação -->
+        <!-- Post Apresentação -->
         <article class="post-card">
             <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao">
             <div>
                 <h2>Meu primeiro post</h2>
                 <p class="artigo-autor">Por: Marcelo Paludetto</p>
-                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia aplicada ao agronegócio.</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
                 
                 <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
                 <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
             </div>
         </article>
 
-        <!-- Post 3: Drones -->
+        <!-- CATEGORIA: TECNOLOGIA NO CAMPO -->
+        <h2 class="section-title">Tecnologia no Campo</h2>
+
         <article class="post-card">
             <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao">
             <div>
-                <h2>Uso de Drones no Mapeamento de Lavouras</h2>
+                <h2>Drones na Agricultura</h2>
                 <p class="artigo-autor">Por: Marcelo Paludetto</p>
-                <p>Os drones se tornaram grandes aliados dos agrônomos. Com imagens aéreas de alta precisão, é possível identificar falhas de plantio, pragas e falta de água em questão de minutos, otimizando o tempo e economizando recursos.</p>
+                <p>Como o uso de imagens aéreas ajuda a identificar falhas no plantio, pragas e estresse hídrico em minutos.</p>
                 
                 <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
                 <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
             </div>
         </article>
 
-        <!-- Post 4: Sensores e IoT -->
         <article class="post-card">
             <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao">
             <div>
-                <h2>Sensores de Solo e a Internet das Coisas (IoT)</h2>
+                <h2>Sensores de Solo e IoT</h2>
                 <p class="artigo-autor">Por: Marcelo Paludetto</p>
-                <p>Com a instalação de sensores conectados à internet no campo, os produtores conseguem monitorar a umidade e a temperatura da terra diretamente do celular. Isso garante irrigações precisas e no momento certo.</p>
+                <p>Como a Internet das Coisas avisa o produtor exatamente quando e quanto irrigar a lavoura.</p>
                 
                 <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
                 <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
             </div>
         </article>
 
-        <!-- Post 5: Bioinsumos -->
         <article class="post-card">
             <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao">
             <div>
-                <h2>Bioinsumos: O Futuro da Nutrição e Proteção das Plantas</h2>
+                <h2>Máquinas Autônomas</h2>
                 <p class="artigo-autor">Por: Marcelo Paludetto</p>
-                <p>A substituição gradual de produtos químicos por defensivos biológicos (como fungos e bactérias benéficas) fortalece o ecossistema do solo e melhora a qualidade da produção agrícola sem agredir a natureza.</p>
+                <p>Tratores e colheitadeiras guiados por GPS que trabalham com precisão milimétrica sem intervenção humana direta.</p>
+                
+                <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
+                <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- CATEGORIA: SUSTENTABILIDADE E MANEJO -->
+        <h2 class="section-title">Sustentabilidade e Manejo</h2>
+
+        <article class="post-card">
+            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao">
+            <div>
+                <h2>Insumos Biológicos (Bioinsumos)</h2>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p>O uso de fungos e bactérias do bem no lugar de defensivos químicos para combater pragas.</p>
+                
+                <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
+                <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao">
+            <div>
+                <h2>Plantio Direto</h2>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p>Como essa técnica protege o solo contra a erosão e mantém a umidade da terra por mais tempo.</p>
+                
+                <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
+                <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao">
+            <div>
+                <h2>Rotação de Culturas</h2>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p>A importância de alternar o cultivo (ex: milho e soja) para recuperar os nutrientes da terra natural.</p>
+                
+                <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
+                <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- CATEGORIA: AGRO DO FUTURO -->
+        <h2 class="section-title">Agro do Futuro</h2>
+
+        <article class="post-card">
+            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao">
+            <div>
+                <h2>Fazendas Verticais</h2>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p>O cultivo de alimentos dentro das grandes cidades em prédios e galpões usando luzes LED.</p>
+                
+                <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
+                <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao">
+            <div>
+                <h2>Créditos de Carbono</h2>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p>Como o agronegócio pode lucrar ajudando a capturar carbono da atmosfera e preservar o meio ambiente.</p>
                 
                 <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
                 <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
