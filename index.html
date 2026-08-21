@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuidados com Pets</title>
+    <title>Inovação & Agronomia</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -53,7 +53,7 @@
             z-index: 1000;
         }
 
-        /* Estilização dos Cards para o Tema */
+        /* Estilização dos Cards */
         .pet-card, .post-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -101,7 +101,7 @@
 </head>
 <body>
 
-    <!-- Botão para Alternar Modo Escuro / Claro -->
+    <!-- Botão de Modo Escuro / Claro -->
     <button class="theme-toggle-btn" onclick="toggleTheme()">
         <i class="fa-solid fa-moon" id="themeIcon"></i>
         <span id="themeText">Modo Escuro</span>
@@ -116,13 +116,13 @@
 
     <main class="site-main container">
         
-        <!-- Post do Pet -->
+        <!-- Post 1: Saude e Bem-Estar -->
         <article class="pet-card">
             <div class="image-container">
                 <img src="Gemini_Generated_Image_m8syjtm8syjtm8sy.png" alt="Cachorro feliz correndo ao ar livre">
             </div>
             <div class="card-content">
-                <h2>Saúde e Bem-estar</h2>
+                <h2>Saúde e Bem-estar no Campo</h2>
                 <p>Mantenha a vacinação em dia e faça passeios regulares para garantir a alegria do seu amigo!</p>
                 
                 <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
@@ -130,26 +130,52 @@
             </div>
         </article>
 
-        <!-- Primeiro Post do Blog -->
+        <!-- Post 2: Apresentação -->
         <article class="post-card">
-            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
+            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao">
             <div>
                 <h2>Meu primeiro post</h2>
                 <p class="artigo-autor">Por: Marcelo Paludetto</p>
-                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia aplicada ao agronegócio.</p>
                 
                 <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
                 <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
             </div>
         </article>
 
-        <!-- Segundo Post do Blog -->
+        <!-- Post 3: Drones -->
         <article class="post-card">
-            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
+            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao">
             <div>
-                <h2>Meu primeiro post</h2>
+                <h2>Uso de Drones no Mapeamento de Lavouras</h2>
                 <p class="artigo-autor">Por: Marcelo Paludetto</p>
-                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                <p>Os drones se tornaram grandes aliados dos agrônomos. Com imagens aéreas de alta precisão, é possível identificar falhas de plantio, pragas e falta de água em questão de minutos, otimizando o tempo e economizando recursos.</p>
+                
+                <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
+                <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- Post 4: Sensores e IoT -->
+        <article class="post-card">
+            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao">
+            <div>
+                <h2>Sensores de Solo e a Internet das Coisas (IoT)</h2>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p>Com a instalação de sensores conectados à internet no campo, os produtores conseguem monitorar a umidade e a temperatura da terra diretamente do celular. Isso garante irrigações precisas e no momento certo.</p>
+                
+                <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
+                <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- Post 5: Bioinsumos -->
+        <article class="post-card">
+            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao">
+            <div>
+                <h2>Bioinsumos: O Futuro da Nutrição e Proteção das Plantas</h2>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p>A substituição gradual de produtos químicos por defensivos biológicos (como fungos e bactérias benéficas) fortalece o ecossistema do solo e melhora a qualidade da produção agrícola sem agredir a natureza.</p>
                 
                 <button class="like-btn" onclick="toggleLike(this)">❤️ <span>0</span></button>
                 <button class="like-btn" onclick="toggleLike(this)">👍 <span>0</span></button>
@@ -160,7 +186,7 @@
 
     <!-- Scripts de Funcionalidades -->
     <script>
-        // Lógica do Modo Escuro / Claro
+        // Alternar Modo Escuro / Claro
         function toggleTheme() {
             const body = document.body;
             const themeIcon = document.getElementById('themeIcon');
